@@ -1,4 +1,4 @@
-package com.dani.eatsbalance.ui.screen.login
+package com.dani.eatsbalance.ui.screen
 
 import android.util.Log
 import androidx.compose.foundation.background
@@ -12,11 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.ImeAction
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import androidx.navigation.compose.rememberNavController
 import com.dani.eatsbalance.viewmodel.AuthViewModel
 import com.dani.eatsbalance.viewmodel.AuthState
 import androidx.compose.ui.text.input.PasswordVisualTransformation

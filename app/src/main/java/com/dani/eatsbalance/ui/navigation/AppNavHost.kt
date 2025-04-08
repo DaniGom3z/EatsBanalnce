@@ -4,11 +4,11 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.dani.eatsbalance.ui.screen.login.LoginScreen
+import com.dani.eatsbalance.ui.screen.LoginScreen
 import com.dani.eatsbalance.ui.screen.RegisterScreen
 import com.dani.eatsbalance.viewmodel.AuthViewModel
 import com.dani.eatsbalance.viewmodel.MealsViewModel
-import com.dani.eatsbalance.ui.screen.dashboard.DashboardScreen
+import com.dani.eatsbalance.ui.screen.DashboardScreen
 
 
 @Composable

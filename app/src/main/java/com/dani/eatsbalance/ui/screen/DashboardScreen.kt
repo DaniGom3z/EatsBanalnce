@@ -1,9 +1,9 @@
-package com.dani.eatsbalance.ui.screen.dashboard
+package com.dani.eatsbalance.ui.screen
 
+import android.Manifest
 import android.util.Log
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
@@ -15,20 +15,15 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color // Keep explicit Color.White for button text if needed
-import androidx.compose.ui.res.stringResource // Use string resources (recommended)
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.dani.eatsbalance.R // Assuming you have string resources
 import com.dani.eatsbalance.model.data.MealRequest
 import com.dani.eatsbalance.viewmodel.MealsViewModel
 import java.text.SimpleDateFormat // For date formatting
 import java.util.* // For Date and Locale
-import androidx.compose.material.icons.filled.*
 import androidx.compose.ui.platform.LocalContext
 
 // Helper function to format timestamp
@@ -307,7 +302,7 @@ fun DashboardScreen(
 
 // Separate Composable for Meal Item Card for better organization
 @Composable
-fun MealItemCard(meal: com.dani.eatsbalance.model.data.MealRequest, onDelete: () -> Unit) { // Use the actual Meal model
+fun MealItemCard(meal: MealRequest, onDelete: () -> Unit) { // Use the actual Meal model
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = MaterialTheme.shapes.large, // Slightly rounded corners
@@ -399,9 +394,9 @@ fun PermissionRequester() {
     val context = LocalContext.current
 
     val permissions = listOf(
-        android.Manifest.permission.CAMERA,
-        android.Manifest.permission.RECORD_AUDIO,
-        android.Manifest.permission.READ_EXTERNAL_STORAGE
+        Manifest.permission.CAMERA,
+        Manifest.permission.RECORD_AUDIO,
+        Manifest.permission.READ_EXTERNAL_STORAGE
     )
 
     val permissionLauncher = rememberLauncherForActivityResult(
